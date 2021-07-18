@@ -46,9 +46,13 @@ self.addEventListener("activate", (event) => {
 });
 
 /*
-! This event intercepts every fetch request !
-@ If the request exists in cache it return the caches file 
-@ else if internet connection is available then the browser continues the request and response is stored in DYNAMIC_CACHE_NAME cache for future fetch requests
+@ This event intercepts every fetch request !
+
+-- If the request exists in cache it return the caches file 
+
+-- else if internet connection is available then the browser continues the request and the response is stored in DYNAMIC_CACHE_NAME cache for future fetch requests
+
+--else if internet connection is unavailable then a fallback page (Offline.html) is shown to the user only if the requested page is of *.html format
 */
 self.addEventListener("fetch", (event) => {
   // console.log("Service worker if fetching", event);
@@ -68,10 +72,8 @@ self.addEventListener("fetch", (event) => {
       })
       .catch(() => {
         if (event.request.url.indexOf('.html') > -1) {
-          console.log("404");
           return caches.match("/offline.html")
         }
-        console.log("404");
       })
   );
 });
