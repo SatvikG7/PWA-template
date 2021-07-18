@@ -1,0 +1,13 @@
+:root{
+  --bg: "#f00";
+  --header: "#00f";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
