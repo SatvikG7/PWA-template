@@ -6,7 +6,7 @@ if ("serviceWorker" in navigator) {
 }
 
 /*
-++ Switches the protocol to HTTPS
+@ Switches the protocol to HTTPS
 ++ Comment when in development mode
 -- Uncomment when in production mode
 */
