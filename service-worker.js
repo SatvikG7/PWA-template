@@ -1,7 +1,7 @@
-// *** This is cache name, change this every time you make changes to app ***
+// *** This is cache name, change this whenever you make changes to the app ***
 const CACHE_NAME = "cache-v0";
 
-// *** This is cache name, change this every time you make changes to app ***
+// *** This is cache name, change this whenever you make changes to the app ***
 const DYNAMIC_CACHE_NAME = "dynamic-cache-v0";
 
 // *** Array of files that you want browser to cache (Mostly static assets) and think then as fetch requested ***
@@ -26,7 +26,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// *** This event is only fired when a new Service worker or Firsr Service worker is activated ***
+// *** This event is only fired when a new Service worker or old Service worker is activated ***
 self.addEventListener("activate", (event) => {
   // console.log("Service worker has been activated", event);
   // *** Wait until browser deletes old files in CACHE_THIS array declared above, only the files files corresponding to CACHE_NAME cache are saved in cache ***
@@ -49,9 +49,7 @@ self.addEventListener("activate", (event) => {
 @ This event intercepts every fetch request !
 
 -- If the request exists in cache it return the caches file 
-
 -- else if internet connection is available then the browser continues the request and the response is stored in DYNAMIC_CACHE_NAME cache for future fetch requests
-
 --else if internet connection is unavailable then a fallback page (Offline.html) is shown to the user only if the requested page is of *.html format
 */
 self.addEventListener("fetch", (event) => {

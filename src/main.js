@@ -1,10 +1,3 @@
-// *** Registers Service Worker ***
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js");
-  });
-}
-
 /*
 @ Switches the protocol to HTTPS
 ++ Comment when in development mode
@@ -18,3 +11,7 @@ if (location.protocol !== "https:") {
   );
 }
 */
+
+const app = document.getElementById("app");
+
+app.innerHTML = `<h1>Start Editing<pre><code> main.js</code></pre></h1>`;
